@@ -43,8 +43,8 @@ const Navbar = () => {
 
   return (
     <>
-    <nav className="bg-blue-900 text-white">
-      <div className="container mx-auto px-4 py-3 md:flex md:justify-between md:items-center">
+    <nav className="bg-blue-900 text-white sticky top-0">
+      <div className="container mx-auto px-4 py-3 md:flex md:justify-between md:items-center ">
         <div className="flex justify-between items-center">
           <Link to="/" className="font-bold text-xl">
           <img src="logojobsku.png" alt="Logo JobsKU" className="w-auto h-8 md:h-10 mr-2 md:mr-4" />
@@ -80,16 +80,14 @@ const Navbar = () => {
             isMenuOpen ? 'block' : 'hidden'
           } md:flex md:items-center`}
         >
-          <Link
-            to="/"
-            className="block mt-4 md:inline-block md:mt-0 md:ml-6"
-          >
-            Beranda
-          </Link>
           <a
-            href="#kategori"
+            href="/"
             className="block mt-4 md:inline-block md:mt-0 md:ml-6"
-          >Kategori</a>
+          >Beranda</a>
+          <a
+            href="#fitur"
+            className="block mt-4 md:inline-block md:mt-0 md:ml-6"
+          >Fitur</a>
           <a
             href="#lowongankerja"
             className="block mt-4 md:inline-block md:mt-0 md:ml-6"

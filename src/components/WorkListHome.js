@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from "react-router-dom"
 import Hero from './Hero'
 import Fitur from './Fitur'
 import { Link } from "react-router-dom"
-import { useParams } from 'react-router-dom'
 
 const WorkListHome = () => {
-
-        const navigate = useNavigate()
 
         const [data, setData] = useState(null)
       
@@ -54,7 +50,7 @@ const WorkListHome = () => {
             <Hero />
             <Fitur/>
             <section id="lowongankerja">
-            <div className='m-10 mt-10'>
+            <div className='m-10 mt-20'>
             <p className='text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl text-center'>Temukan <span className="text-blue-900">Lowongan</span> Tersedia</p></div>
             <div className="flex justify-center flex-wrap mx-10 mb-10 py-8 gap-7 px-15">
             
@@ -66,7 +62,7 @@ const WorkListHome = () => {
               
               return (
                 <>   
-                <Link to={`/lowongan/${res.id}`} key={res?.id} className="flex flex-col hover:drop-shadow-lg rounded-xl w-full lg:max-w-xs p-6 bg-white overflow-hidden border-solid border-l-2 border-r-2 border-t-2 border-b-2 border-blue-900">
+                <Link to={`/lowongan/${res.id}`} key={res?.id} className="flex flex-col rounded-xl w-full lg:max-w-xs p-6 bg-white overflow-hidden border-solid border-l-2 border-r-2 border-t-2 border-b-2 border-blue-900">
   <div className="flex flex-col md:flex-row items-center justify-between">
     <div className="flex items-center justify-start w-full flex-grow">
       
