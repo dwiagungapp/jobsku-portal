@@ -13,10 +13,11 @@ const Hero = () => {
           <p className="text-lg sm:text-xl mb-6">
             Temukan lowongan pekerjaan impian Anda dan tingkatkan karir Anda bersama kami.
           </p>
+
           <Link to="/lowongan">
-            <a className="inline-block px-8 py-4 sm:px-10 sm:py-5 bg-blue-900 text-white font-bold rounded-lg hover:bg-blue-800">
+            <button className="inline-block px-8 py-4 sm:px-10 sm:py-5 bg-blue-900 text-white font-bold rounded-lg hover:bg-blue-800">
               Cari Pekerjaan
-            </a>
+            </button>
           </Link>
         </div>
         <div className="md:w-1/2 lg:w-7/12">

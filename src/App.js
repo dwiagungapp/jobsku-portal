@@ -7,7 +7,6 @@ import { GlobalProvider } from './context/GlobalContext'
 import WorkList from './components/WorkList';
 import WorkListHome from './components/WorkListHome';
 import DetailJob from './components/DetailJob';
-import { Helmet } from 'react-helmet';
 import Login from './components/Login';
 import { getToken } from "./cookie";
 import { useEffect } from 'react';
@@ -25,9 +24,6 @@ const App = () => {
  
   return (
     <>
-     <Helmet>
-        <title>JOBSKU - Temukan Pekerjaan Impianmu</title>
-      </Helmet>
 
     <BrowserRouter>
     <GlobalProvider>

@@ -5,10 +5,11 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,23 +24,40 @@ const Login = () => {
 
         // Menyimpan token ke dalam cookies
         setCookie("token", response.data.token);
+
+        // Menampilkan alert login berhasil
+        alert("Login berhasil! Silahkan refresh halaman");
+
+        // Navigate ke halaman utama
+        navigate('/');
       })
       .catch((error) => {
         console.log(error);
+        setError("Email atau password salah. Silakan coba lagi.");
       });
-
-      navigate('/');
   };
 
   return (
     <>
-
-<div className="min-h-screen bg-gray-100 flex justify-center items-center">
-  <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-md w-full">
+      <div className="min-h-screen bg-white flex flex-col items-center justify-center">
+  <div className="bg-gray-100 shadow-md rounded p-12 max-w-md w-full">
     <h1 className="text-2xl font-bold mb-6 text-center">Log In</h1>
+    <div className="bg-blue-900 border border-white text-gray-100 px-4 py-3 rounded mb-4">
+        <strong className="font-bold">Email: eve.holt@reqres.in</strong><br/>
+        <strong className="font-bold">Password: cityslicka</strong>
+      </div>
+    {error && (
+      <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+        <strong className="font-bold">Error:</strong>
+        <span className="block">{error}</span>
+      </div>
+    )}
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
-        <label className="block text-gray-700 font-bold mb-2" for="email">
+        <label
+          className="block text-gray-700 font-bold mb-2"
+          htmlFor="email"
+        >
           Email
         </label>
         <input
@@ -52,7 +70,10 @@ const Login = () => {
         />
       </div>
       <div>
-        <label className="block text-gray-700 font-bold mb-2" for="password">
+        <label
+          className="block text-gray-700 font-bold mb-2"
+          htmlFor="password"
+        >
           Password
         </label>
         <input
